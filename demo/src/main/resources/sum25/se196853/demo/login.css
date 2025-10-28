@@ -1,0 +1,243 @@
+/*
+ * ====================================================================
+ * === TỔNG QUAN (GENERAL STYLES) ===
+ * ====================================================================
+ */
+
+.root {
+    -fx-font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    -fx-focus-color: #EF4444; /* Đỏ tươi */
+}
+
+/* ====================================================================
+ * === MÀN HÌNH ĐĂNG NHẬP (LOGIN VIEW) ===
+ * ====================================================================
+ */
+
+/* Nền sáng pha đỏ nhẹ */
+.app {
+    -fx-background-color: linear-gradient(to bottom right, #FDF2F2, #FFFFFF 90%);
+}
+
+/* Thẻ đăng nhập (Card) */
+.card {
+    -fx-background-color: rgba(255, 255, 255, 0.98);
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 32, 0.2, 0, 12);
+    -fx-spacing: 14;
+}
+
+/* Tiêu đề */
+.title {
+    -fx-font-size: 22px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #111827;
+}
+
+/* Tiêu đề phụ */
+.subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6B7280;
+}
+
+/* Nhãn (Label) cho input */
+.label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #374151;
+}
+
+/* ====================================================================
+ * === CÁC THÀNH PHẦN CHUNG (GLOBAL COMPONENTS)
+ * ====================================================================
+ */
+
+.text-field,
+.password-field,
+.combo-box {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 8;
+    -fx-padding: 8 10 8 10;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-prompt-text-fill: #9CA3AF;
+}
+
+/* Focus */
+.text-field:focused,
+.password-field:focused,
+.combo-box:focused {
+    -fx-border-color: #EF4444;
+    -fx-border-width: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(239, 68, 68, 0.25), 10, 0.2, 0, 1);
+}
+
+/* Nút chính (Login, Save, Add) */
+.button,
+.btn-primary {
+    -fx-background-color: #EF4444;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 8 14 8 14;
+    -fx-font-weight: 700;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(239, 68, 68, 0.2), 6, 0.2, 0, 2);
+}
+
+.button:hover,
+.btn-primary:hover {
+    -fx-background-color: #DC2626;
+}
+
+/* Nút phụ (Exit, Cancel) */
+.btn-ghost {
+    -fx-background-color: transparent;
+    -fx-text-fill: #374151;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+.btn-ghost:hover {
+    -fx-background-color: #FEF2F2;
+    -fx-border-color: #EF4444;
+    -fx-text-fill: #B91C1C;
+}
+
+/* Nút Delete */
+#btnDelete {
+    -fx-background-color: #FEE2E2;
+    -fx-text-fill: #B91C1C;
+}
+#btnDelete:hover {
+    -fx-background-color: #FECACA;
+}
+
+/* Nút Clear */
+#btnClear {
+    -fx-background-color: #E5E7EB;
+    -fx-text-fill: #1F2937;
+}
+#btnClear:hover {
+    -fx-background-color: #D1D5DB;
+}
+
+/* Trạng thái thông báo */
+.status {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6B7280;
+}
+
+.status-success {
+    -fx-text-fill: #10B981; /* Xanh lá */
+}
+.status-error {
+    -fx-text-fill: #DC2626;
+}
+
+/* ====================================================================
+ * === MÀN HÌNH CHÍNH (MAIN VIEW)
+ * ====================================================================
+ */
+
+.main-app-pane {
+    -fx-background-color: #FFF5F5; /* đỏ siêu nhạt */
+}
+
+/* Thanh Menu */
+.menu-bar {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: transparent transparent #FECACA transparent;
+    -fx-border-width: 1;
+}
+
+/* Tab Content */
+.tab-pane > .tab-content-area {
+    -fx-background-color: #FFF5F5;
+    -fx-padding: 0;
+}
+
+.tab-pane > .tab-header-area {
+    -fx-padding: 0;
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: transparent transparent #FECACA transparent;
+    -fx-border-width: 1;
+}
+
+/* Tab */
+.tab-pane > .tab-header-area .tab {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: transparent transparent #FECACA transparent;
+    -fx-border-width: 2;
+    -fx-padding: 8 16 8 16;
+}
+
+/* Tab selected */
+.tab:selected {
+    -fx-border-color: transparent transparent #EF4444 transparent;
+}
+.tab:selected .tab-label {
+    -fx-text-fill: #EF4444;
+    -fx-font-weight: 700;
+}
+
+/* Hover tab */
+.tab:hover {
+    -fx-background-color: #FEF2F2;
+}
+
+/* ====================================================================
+ * === TAB NỘI DUNG (VD: Manage Computers)
+ * ====================================================================
+ */
+
+/* Tiêu đề */
+BorderPane > .top > Label {
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111827;
+    -fx-padding: 16 16 0 16;
+}
+
+/* Bảng dữ liệu */
+.table-view {
+    -fx-border-color: #FECACA;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+/* Tiêu đề cột */
+.table-view .column-header-background {
+    -fx-background-color: #FFF5F5;
+}
+.table-view .column-header {
+    -fx-font-size: 12px;
+    -fx-text-fill: #B91C1C;
+    -fx-font-weight: 700;
+    -fx-padding: 8 12 8 12;
+}
+
+/* Dòng được chọn */
+.table-view .table-row-cell:selected {
+    -fx-background-color: #FECACA;
+    -fx-text-fill: #111827;
+}
+
+/* Khu vực Form */
+BorderPane > .bottom > VBox {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #FECACA transparent transparent transparent;
+    -fx-border-width: 1;
+    -fx-padding: 20;
+    -fx-spacing: 12;
+}
+
+/* Tiêu đề form */
+BorderPane > .bottom > VBox > Label {
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1F2937;
+}

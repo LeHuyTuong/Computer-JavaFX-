@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import java.lang.String?>
+<!-- Đổi fx:controller sang LoginController -->
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           xmlns="http://javafx.com/javafx/21"
+           fx:controller="sum25.se196853.demo.controller.LoginController"
+           styleClass="app">
+
+    <!-- Giữ nguyên stylesheet -->
+    <stylesheets>
+        <String fx:value="/sum25/se196853/demo/login.css" />
+    </stylesheets>
+
+    <!-- Centered Card -->
+    <VBox alignment="CENTER" spacing="14.0" maxWidth="360.0" styleClass="card">
+        <!-- Title -->
+        <Label text="Laptop Shop Login" styleClass="title"/>
+        <Label text="Sign in to continue" styleClass="subtitle"/>
+
+        <!-- Form -->
+        <VBox spacing="6.0" maxWidth="320.0" styleClass="form">
+            <!-- Sửa Label và Prompt Text -->
+            <Label text="Email" styleClass="label"/>
+            <TextField fx:id="txtUsername" promptText="Enter your email"/>
+
+            <Label text="Password" styleClass="label" />
+            <PasswordField fx:id="txtPassword" promptText="••••••••"/>
+        </VBox>
+
+        <!-- Status -->
+        <Label fx:id="lblStatus" styleClass="status" text="Please enter credentials."/> <!-- Thêm text mặc định -->
+
+        <!-- Actions -->
+        <VBox spacing="10.0" maxWidth="320.0">
+            <!-- Đổi onAction và text -->
+            <Button fx:id="btnHello"
+                    onAction="#onHelloButtonClick"
+                    text="Login"
+                    maxWidth="Infinity"
+                    styleClass="btn btn-primary"/>
+            <!-- Đổi onAction -->
+            <Button fx:id="btnBye"
+                    onAction="#onByeByeClick"
+                    text="Exit"
+                    maxWidth="Infinity"
+                    styleClass="btn btn-ghost"/>
+        </VBox>
+
+        <!-- Padding inside card -->
+        <padding>
+            <Insets top="24.0" right="24.0" bottom="24.0" left="24.0"/>
+        </padding>
+    </VBox>
+</StackPane>
